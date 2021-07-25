@@ -39,7 +39,7 @@ function draw() {
 	if(controllerID!=-1){
 	var gamepads = navigator.getGamepads()
 	clear();
-	let controller=gamepads[0];
+	let controller=gamepads[controllerID];
 	if(controller!=undefined){
 		noStroke();
 		directionalLight(250, 250, 250,0,0, -1);
