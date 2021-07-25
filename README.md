@@ -9,4 +9,4 @@ To start the Server, you simply double click on the start.bat File. The Server s
 
 The First time you run the Server and you connect your Radio nothing will be displayed because your Browser doesn't know which Gamecontroller to use. So you need to open the Console (F12) and find out which Index is the correct Gamecontroller and then replace the -1 in the config.xml File with the correct Index. If you then reload the page, the Sticks should show up.
 
-![Alt text] (images/img1.png?raw=true "In Game")
+![Alt text](images/img1.png?raw=true "In Game")
