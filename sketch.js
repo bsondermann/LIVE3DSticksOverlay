@@ -6,6 +6,7 @@ let gtex;
 let controllers = []
 let config;
 let controllerID=-1;
+let throttlechannel,yawchannel,pitchchannel,rollchannel;
 function preload(){
 	config = loadXML('config.xml');
 	gc = loadModel('gimbalcover.obj',false);
@@ -33,6 +34,11 @@ function setup() {
     gamepadHandler(e, false);
   });
   controllerID= parseInt(config.getChildren("gamecontollerID")[0].getContent());
+  throttlechannel = parseInt(config.getChildren("throttle")[0].getContent())-1;
+  yawchannel = parseInt(config.getChildren("yaw")[0].getContent())-1;
+  pitchchannel = parseInt(config.getChildren("pitch")[0].getContent())-1;
+  rollchannel = parseInt(config.getChildren("roll")[0].getContent())-1;
+  
 }
 
 function draw() {
@@ -49,20 +55,20 @@ function draw() {
 		scale(4+(2/3));
 		texture(gctex);
 		model(gc);
-		rotateX(controller.axes[2]*0.436);
+		rotateX(controller.axes[yawchannel]*0.436);
 		texture(gtex);
 		model(g);
-		rotateY(-controller.axes[3]*0.436);
+		rotateY(-controller.axes[throttlechannel]*0.436);
 		model(s);
 		pop();
 		translate(240,0,0);
 		scale(4+(2/3));
 		texture(gctex);
 		model(gc);
-		rotateX(controller.axes[1]*0.436);
+		rotateX(controller.axes[rollchannel]*0.436);
 		texture(gtex);
 		model(g);
-		rotateY(-controller.axes[0]*0.436);
+		rotateY(-controller.axes[pitchchannel]*0.436);
 		model(s);
 	}
 }else{

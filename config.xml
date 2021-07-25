@@ -1,3 +1,9 @@
 <config>
 	<gamecontollerID>-1</gamecontollerID>
+	<channels>
+		<throttle>4</throttle>
+		<yaw>3</yaw>
+		<roll>2</roll>
+		<pitch>1</pitch>
+	</channels>
 </config>
